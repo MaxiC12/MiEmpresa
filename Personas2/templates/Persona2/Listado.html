@@ -1,0 +1,63 @@
+{% extends "Persona2/base2.html" %}
+  {% block content %}
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        
+        <a href="{% url 'nueva' %} "><button type="button" class="btn btn-outline-success" >Agregar Cliente</button> </a>
+        
+        <br>
+        <br>
+        <th scope="col">ID</th>
+        <th scope="col">DNI</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Sexo</th> 
+        <th scope="col">Foto</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+  {% for per in personas %}
+      <tr>
+        <th scope="row">{{per.id}}</th>
+        <th scope="row">{{per.dni}}</th>
+        <td>{{per.apellido}}</td> 
+        <td>{{per.nombre}}</td>
+        <td>{{per.sexo}}</td>
+        <td VALIGN="middle">
+        {% if per.foto %}
+          <div class="row-picture">
+            <img class="img" src="{{per.foto.url}}" alt="{{per.nombre}}"
+            width="80" height="80">
+            <br>
+          </div>
+        {% else %}  
+        <div class="row-picture">
+          <img class="img" src="/media/imagenes/avatar.png" alt="{{per.nombre}}" width="80" height="80">
+        </div>
+       {% endif %}
+        </td>
+        <td>
+
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+          {{formPersona.as_table}}
+          <a href="{% url 'editar' per.id %} "><button type="button" class="btn btn-outline-primary" >Editar Cliente</button></a>
+          <br>
+          <br>
+          <a href="{% url 'eliminar' per.id %} "><button type="button" class="btn btn-outline-danger" >Eliminar Cliente</button></a>
+          <br>
+  
+         
+         
+          <!--  
+         
+          <button type="button" href="{% url 'eliminar' per.id %} " class="btn btn-danger">Eliminar Cliente </button>-->
+            </form> 
+            </td>
+            </tr>  
+   {% endfor %}   
+      </tbody>
+      </table>
+{% endblock %}

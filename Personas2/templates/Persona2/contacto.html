@@ -1,0 +1,33 @@
+{% extends "Persona2/base2.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">Contacto</span>
+                    </h2>
+                    {% if messages %}
+                       {% for message in messages %}
+                          <p {% if message.tags %} class="alert alert-danger" role="alert" {% endif %}>{{ message }}</p>
+                       {% endfor %}
+                    {% endif %}
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ contacto_form }}
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                        <a href="/" class="btn btn-warning">Cancelar</a>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

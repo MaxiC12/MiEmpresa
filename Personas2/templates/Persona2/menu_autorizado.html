@@ -1,0 +1,61 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Retroceder</a>
+  </li>
+ 
+  <li class="nav-item">
+    <a class="nav-link " href="{% url 'Listado' %}">Clientes</a> 
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" href="{% url 'contacto' %}">Contacto</a>
+  </li>
+   <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Cuenta</a>
+    <ul class="dropdown-menu">
+      <li><a  class="dropdown-item" href="#">Cambiar clave </a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesion</a></li><!--change_password.html-->
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+<!--<ul class="nav nav-underline">
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" href="{% url 'contacto' %}">Contacto</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" href="{% url 'index' %}">Retroceder</a></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="{% url 'logout' %}">Cerrar sesion</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="{% url 'Listado' %}">Clientes</a> 
+  </li>
+</ul> 
+
+ <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <li><a class="nav-link active" aria-current="page" href="{% url 'index' %}">Retroceder</a></li>
+          <a class="nav-link active" href="{% url 'logout' %}">Cerrar sesion</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">Contacto</a>
+          <a class="nav-link active" href="{% url 'Listado' %}">Clientes</a>         
+        </li>
+
+          <ul class="dropdown-menu">
+            <li><a class="cambiarclave" href="#" >Cambiar Clave</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+-->

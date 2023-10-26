@@ -1,0 +1,20 @@
+{% extends 'persona2/base2.html' %}
+
+{% block title %}
+  Editar persona
+{% endblock title %}
+  
+{% block content %}
+
+    <table> 
+        </form>
+      <form method="POST">
+        {% csrf_token %}
+
+        {{formpersona.as_table}}
+        <button type="submit" class="btn btn-outline-danger">Eliminar cliente</button>
+       
+     </form> 
+    </table>
+
+{% endblock %}  
